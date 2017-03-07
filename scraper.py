@@ -4,6 +4,7 @@ import re
 import requests
 from decimal import *
 
+#adapted from Truesight dotabuff scraper
 
 ALL_HERO_NAMES_URL = "http://www.dota2.com/heroes/"
 
@@ -132,7 +133,6 @@ class AdvantageDataForAHero:
     @staticmethod
     def get_advantages_from_string(web_content, self):
         soup = BeautifulSoup(web_content, "html.parser")
-        #soup = soup.find("table", class_="sortable")
         soup = soup.find_all("tr")
 
         list = []
